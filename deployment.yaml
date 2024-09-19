@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetesbasic-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubernetesbasic
+  template:
+    metadata:
+      labels:
+        app: kubernetesbasic
+    spec:
+      containers:
+        - name: kubernetesbasic
+          image: anandkoilwar/kubernetesbasic-app:latest
+          ports:
+            - containerPort: 8000
